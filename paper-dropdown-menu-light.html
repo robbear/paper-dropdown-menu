@@ -412,6 +412,16 @@ To style it:
             value: 'top'
           },
 
+          /**
+           * If true, the menu will close when it receives an `iron-activate`
+           * event.
+           */
+          closeOnActivate: {
+            type: Boolean,
+            value: false,
+            observer: '_closeOnActivateChanged'
+          },
+
           hasContent: {
             type: Boolean,
             readOnly: true
@@ -515,6 +525,15 @@ To style it:
 
           this._setValue(value);
           this._setSelectedItemLabel(value);
+        },
+
+        _closeOnActivateChanged: function(closeOnActivate) {
+          this._close_bound = this._close_bound || this.close.bind(this);
+          if (closeOnActivate) {
+            this.addEventListener('iron-activate', this._close_bound);
+          } else {
+            this.removeEventListener('iron-activate', this._close_bound);
+          }
         },
 
         /**

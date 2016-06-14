@@ -114,6 +114,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </demo-snippet>
 
+    <h4>
+      The close-on-activate attribute causes the paper-dropdown-menu to close
+      when the an item in the selector it wraps is clicked, even if clicking
+      that item did not change the selection.
+    </h4>
+    <demo-snippet class="centered-demo">
+      <template>
+        <paper-dropdown-menu label="Dinosaurs" close-on-activate>
+          <paper-listbox class="dropdown-content">
+            <paper-item>allosaurus</paper-item>
+            <paper-item>brontosaurus</paper-item>
+            <paper-item>carcharodontosaurus</paper-item>
+            <paper-item>diplodocus</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu>
+
+        <paper-dropdown-menu-light label="Dinosaurs (light)" close-on-activate>
+          <paper-listbox class="dropdown-content">
+            <paper-item>allosaurus</paper-item>
+            <paper-item>brontosaurus</paper-item>
+            <paper-item>carcharodontosaurus</paper-item>
+            <paper-item>diplodocus</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu-light>
+      </template>
+    </demo-snippet>
+
 
     <h4>A paper-dropdown-menu can be disabled</h4>
     <demo-snippet class="centered-demo">
